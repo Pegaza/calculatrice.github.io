@@ -1,259 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>calculator</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&family=MuseoModerno:wght@300;400&display=swap" rel="stylesheet">
-
-
-    <style>
-
-body {
-  margin: 0 auto;
-  text-align: center;
-  font-size: 23px;
-  color: white;
-  background-color:white;
-
-}
-
-.main {
-  max-width: 10%;
-}
-
-a,
-a:visited  {
-  color: goldenrod;
-}
-
-.dark {
-  background : #b7df89 !important;
-}
-
-.button > .over {
-  text-decoration:overline;
-  display: inline-block;
-  position:relative;
-  top: 3px;
-  left: -4px;
-}
-
-.calculator {
-    margin-right: 0;
-}
-
-
-.calculator button {
-  
-    font-size: x-large;
-    color: #3f3f3f;
-    width: 2.5em;
-    min-height: 2.5em;
-    margin: 0.8%;
-    border-radius: 25%;
-    background-color: #cad8d8;
-    border: 1px solid #ad919100;
-    font-family: 'MuseoModerno', cursive;
-
-}
-
-
-.calculator button:hover,
-#clear:hover,
-#backspace:hover {
-  background: #f7e583!important;
-  color: #626262;
-  transform: scale(0.9);
-  border-radius: 20%;
-}
-
-.calculator button:focus,
-#clear:focus,
-#backspace:focus {
-  outline: none;
-}
-
-.button:active,
-.button-active {
-  background: gold;
-  color: white;
-  transform: scale(0.9);
-}
-
-#screen{
-    background-color: #ececec;
-    border: 3px solid transparent;
-    /* box-shadow: 3px 3px 3px 3px grey; */
-    border-radius: 29px;
-    width: 25%;
-    height: 70px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5%;
-    text-align: right;
-    overflow: auto;
-    overflow-wrap: break-word;
-    font-size: 60px;
-    font-family: 'Dosis', sans-serif;
-}
-
-
-
-
-    
-
-
-#clean {
-  background: #c4eded;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
-.calculator__row1,
-.calculator__row2,
-.calculator__row3,
-.calculator__row4,
-.calculator__row5 {
-  display: flex;
-  margin: 0 auto;
-     max-width: 25%;
-  justify-content: space-around;
-  align-items: center;
-  font-family: 'Libre Barcode 128 Text', cursive;
-}
-
-.calculator__row5 {
-  margin-bottom: 3%;
-} 
-
-.footer {
-  /* margin-top: 2%;
-  font-size: medium; */
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-
-    </style>
+  <title>Ma première page avec du style</title>
 </head>
+
 <body>
-    <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text" rel="stylesheet">
-<div id="main">
-		<div class="calculator">
-		<input type="text" id="screen">
-      <div class="calculator__row1">
-                               
-    <h1 style="font-size: position:center"></h1>
-    <button class="button" id="clean">AC</button>
-</div>
-    <div class="calculator__row2">
-		   <button class="button dark">7</button>
-			<button class="button dark">8</button>
-			<button class="button dark">9</button>
-			<button class="button">*</button>
-    </div>
-	<div class="calculator__row3">
-		  <button class="button dark">4</button>
-			<button class="button dark">5</button>
-			<button class="button dark">6</button>
-			<button class="button">/</button>
-	</div>
-	<div class="calculator__row4">
-			<button class="button dark">1</button>
-			<button class="button dark">2</button>
-			<button class="button dark">3</button>
-			<button class="button">-</button>
-	</div>
-			<div class="calculator__row5">
-			<button class="button">.</button>
-      <button class="button dark">0</button>
-			<button class="button">=</button>
-			<button class="button">+</button>
-</div>
-</div>
-</div>
 
-	
-		
-	
+<!-- Menu de navigation du site -->
+<ul class="navbar">
+  <li><a href="index.html">Home page</a>
+  <li><a href="reflexions.html">Réflexions</a>
+  <li><a href="ville.html">Ma ville</a>
+  <li><a href="liens.html">Liens</a>
+</ul>
+
+<!-- Contenu principal -->
+<h1>Ma première page avec du style</h1>
+
+<p>Bienvenue sur ma page avec du style! 
+
+<p>Il lui manque des images, mais au moins, elle a du style. Et elle a desliens, même s'ils ne mènent nulle part...
+&hellip;
+
+<p>Je devrais étayer, mais je ne sais comment encore.
+
+<!-- Signer et dater la page, c'est une question de politesse! -->
+<address>Fait le 5 avril 2004<br>
+  par moi.</address>
+
 </body>
-
-<script>
-var display = document.getElementById("screen");
-var buttons = document.getElementsByClassName("button");
-  
-  Array.prototype.forEach.call(buttons, function(button) {
-  button.addEventListener("click", function() {
-    if (button.textContent != "=" && 
-    button.textContent != "AC" && 
-    button.textContent != "*" && 
-    button.textContent != "/" && 
-    button.textContent != "+" && 
-    button.textContent != "=" && 
-    button.textContent != "-") {
-      display.value += button.textContent;
-    } else if (button.textContent === "=") {
-      equals();
-    } else if (button.textContent === "AC") {
-      clear();
-    } else if (button.textContent === "*") {
-      multiply();
-    } else if (button.textContent === "/") {
-      divide();
-    } else if (button.textContent === "+") {
-      plus();
-    } else if (button.textContent === "-") {
-      Minus();
-    }
-  });
-});
-
-
-function syntaxError() {
-  if (eval(display.value) == SyntaxError || eval(display.value) == ReferenceError || eval(display.value) == TypeError) {
-    display.value == "Syntax Error";
-  }
-}
-
-
-function equals() {
-  if ((display.value).indexOf("^") > -1) {
-    var base = (display.value).slice(0, (display.value).indexOf("^"));
-    var exponent = (display.value).slice((display.value).indexOf("^") + 1);
-    display.value = eval("Math.pow(" + base + "," + exponent + ")");
-  } else {
-    display.value = eval(display.value)
-    checkLength()
-    syntaxError()
-  }
-}
-
-function clear() {
-  display.value = "";
-}
-
-
-function multiply() {
-  display.value += "*";
-}
-
-function divide() {
-  display.value +=  "/";
-}
-function plus() {
-  display.value +=  "+";
-}
-
-function Minus() {
-  display.value +=  "-";
-}
-
-
-</script>
-
 </html>
